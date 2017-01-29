@@ -20,19 +20,29 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func showAlert(sender: AnyObject) {
+    @IBAction func showAlert(_ sender: AnyObject) {
         
-        let alertController = UIAlertController(titles: "My App", message: "Hey", preferredStyle: UIAlertControllerStyle.Alert)
         
-        alertController.addAction(UIAlertAction(title: "Print Yes", style: UIAlertActionStyle.Default) {
+        let alertController = UIAlertController(title: "My App", message: "Hey", preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "Print Yes", style: UIAlertActionStyle.default) {
+        UIAlertAction in
+            // Insert code to run on button click below
+            self.printYes()
+        })
+        self.present(alertController, animated: true, completion: nil)
+ 
+        /*
+        let alertController = UIAlertController(title: "My App", message: "Hey", preferredStyle: UIAlertControllerStyle.alert)
+        
+        alertController.addAction(UIAlertAction(title: "Print Yes", style: UIAlertActionStyle.default) {
             UIAlertAction in
             self.printYes()
         })
         
-        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Destructive, handler: nil))
-        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil))
-        self.presentViewController(alertController, animated: true, completion: nil)
-        
+        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive, handler: nil))
+        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+        */
     }
     
     func printYes(){
